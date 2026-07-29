@@ -1,0 +1,12 @@
+{
+  "name": "ANB Advisors LLP",
+  "short_name": "ANB Advisors",
+  "description": "Strategic Finance & Corporate Advisory",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E1512",
+  "theme_color": "#0E1512",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

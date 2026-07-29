@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #f6f3ea;
+  color: #2a2e2b;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background-color: #c4a35a;
+  color: #0e1512;
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #c4a35a;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.perspective-container {
+  perspective: 1600px;
+  perspective-origin: 50% 40%;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.hairline {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(196, 163, 90, 0.5),
+    transparent
+  );
+  height: 1px;
+}
+
+.ledger-rule {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 38px,
+    rgba(196, 163, 90, 0.16) 39px
+  );
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.noise-veil::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar to match brand */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f3ea;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4a35a;
+  border-radius: 6px;
+  border: 2px solid #f6f3ea;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
